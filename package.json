@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "year-sales": "node book-year-sales.js",
+    "ram-killer": "node books-description-embedding.js",
     "normal-1": "node normal-1.js"
   },
   "author": "",
@@ -14,6 +15,7 @@
   "dependencies": {
     "chartjs-node-canvas": "^4.1.6",
     "express": "^4.18.2",
+    "fasttext.js": "^1.1.4",
     "ml-kmeans": "^6.0.0",
     "natural": "^6.10.2"
   }

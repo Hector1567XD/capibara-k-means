@@ -1,3 +1,11 @@
 .env
 node_modules
 ./node_modules
+cc.es.300.bin
+cc.es.300.bin.gz
+./cc.es.300.bin.gz
+cc.es.300.vec
+cc.es.300.vec.gz
+./cc.es.300.vec.gz
+cc.es.300.bin.gz
+./cc.es.300.bin.gz
