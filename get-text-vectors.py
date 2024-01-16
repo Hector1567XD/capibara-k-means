@@ -13,8 +13,8 @@ def get_vectors(descriptions, model):
 
 if __name__ == "__main__":
     input_data = json.loads(sys.stdin.read())
-    model_path = input_data.get('model_path', '')
-    descriptions = input_data.get('descriptions', [])
+    model_path = input_data.get('modelPath', '')
+    descriptions = input_data.get('texts', [])
 
     # Cargar el modelo una vez fuera del bucle
     model = load_model(model_path)

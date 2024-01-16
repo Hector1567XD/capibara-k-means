@@ -2,18 +2,28 @@ const { exec } = require('child_process');
 
 // Ejemplo de datos de entrada
 const inputData = {
-  model_path: './cc.es.300.bin',
-  descriptions: [
+  modelPath: './cc.es.300.bin',
+  texts: [
       'Texto 1', 'Texto 2', 'Texto 3',
       "Gato comida", "Señor de los anillos", "Texto de muestra",
       "Hola mundo", "Texto de prueba", "Texto de ejemplo",
       "Texto 3 de prueba", "Texto 2 de ejemplo", "Texto de super prueba",
   ],
-  n_components: 10,
+  nComponents: 10,
 };
 
+// Definir la constante para determinar qué script ejecutar
+const applyDimensionalityReduction = false;
+
 // Llamada al script de Python
-const pythonProcess = exec('python3 python_script.py', (error, stdout, stderr) => {
+let pythonScript;
+if (applyDimensionalityReduction) {
+  pythonScript = 'get-text-dim-vectors.py';
+} else {
+  pythonScript = 'get-text-vectors.py';
+}
+
+const pythonProcess = exec(`python3 ${pythonScript}`, (error, stdout, stderr) => {
   if (error) {
     console.error(`Error: ${error.message}`);
     return;

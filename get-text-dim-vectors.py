@@ -19,9 +19,9 @@ def reduce_dimensionality(vectors, n_components=10):
 
 if __name__ == "__main__":
     input_data = json.loads(sys.stdin.read())
-    model_path = input_data.get('model_path', '')
-    descriptions = input_data.get('descriptions', [])
-    n_components = input_data.get('n_components', 10)  # Valor por defecto: 10
+    model_path = input_data.get('modelPath', '')
+    descriptions = input_data.get('texts', [])
+    n_components = input_data.get('nComponents', 10)  # Valor por defecto: 10
 
     # Cargar el modelo una vez fuera del bucle
     model = load_model(model_path)
